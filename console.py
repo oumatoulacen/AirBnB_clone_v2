@@ -168,8 +168,7 @@ class HBNBCommand(cmd.Cmd):
             parts = arg.split('=')
 
             if len(parts) != 2:
-                print("** invalid argument format **")
-                return
+                continue
 
             key = parts[0]
             value = parts[1]
