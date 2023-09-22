@@ -173,6 +173,8 @@ class HBNBCommand(cmd.Cmd):
             key = parts[0]
             value = parts[1]
 
+            if key not in self.valid_keys[class_name]:
+                continue
             # Process the value based on the specified rules
             if value.startswith('"') and value.endswith('"'):
                 # Handle strings enclosed in double quotes
