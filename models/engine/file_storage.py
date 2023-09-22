@@ -25,7 +25,8 @@ class FileStorage:
             pass
         key = "{}.{}".format(obj.__class__.__name__, obj.id)
         if key in FileStorage.__objects.keys():
-            del FileStorage.__objects[key]
+            del (FileStorage.__objects[key])
+            self.save()
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
