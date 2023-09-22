@@ -1,0 +1,48 @@
+{
+    "User.8920ba7a-59e5-42f9-b1cd-c069a4dcd0c2": {
+        "id": "8920ba7a-59e5-42f9-b1cd-c069a4dcd0c2",
+        "created_at": "2023-09-21T00:57:55.401158",
+        "updated_at": "2023-09-21T00:57:55.401199",
+        "__class__": "User"
+    },
+    "User.ab95deba-3258-46d4-aebd-fe4c04161c24": {
+        "id": "ab95deba-3258-46d4-aebd-fe4c04161c24",
+        "created_at": "2023-09-21T18:51:06.476064",
+        "updated_at": "2023-09-21T18:51:06.476559",
+        "__class__": "User"
+    },
+    "Place.54c737a0-2851-40d5-97b1-519348ccc6df": {
+        "id": "54c737a0-2851-40d5-97b1-519348ccc6df",
+        "created_at": "2023-09-21T22:53:20.923240",
+        "updated_at": "2023-09-21T22:53:20.923266",
+        "__class__": "Place"
+    },
+    "User.f1d6d591-a420-4607-916e-174e20ae565b": {
+        "id": "f1d6d591-a420-4607-916e-174e20ae565b",
+        "created_at": "2023-09-22T01:09:33.578325",
+        "updated_at": "2023-09-22T01:30:36.410533",
+        "first_name": "John",
+        "age": 89,
+        "name": "lahcen",
+        "__class__": "User"
+    },
+    "State.2ec419d5-1a79-4414-9f75-b3ac41416419": {
+        "id": "2ec419d5-1a79-4414-9f75-b3ac41416419",
+        "created_at": "2023-09-22T02:26:28.865114",
+        "updated_at": "2023-09-22T02:26:28.865318",
+        "__class__": "State"
+    },
+    "State.44e6c053-6253-476a-ae49-e10046b540a7": {
+        "id": "44e6c053-6253-476a-ae49-e10046b540a7",
+        "created_at": "2023-09-22T02:27:32.523768",
+        "updated_at": "2023-09-22T02:27:32.523923",
+        "__class__": "State"
+    },
+    "State.c7da7308-5d0d-4b5d-a83f-db951e85c4fd": {
+        "id": "c7da7308-5d0d-4b5d-a83f-db951e85c4fd",
+        "created_at": "2023-09-22T02:27:41.944491",
+        "updated_at": "2023-09-22T02:27:41.946352",
+        "name": "California",
+        "__class__": "State"
+    }
+}
