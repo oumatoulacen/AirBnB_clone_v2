@@ -11,8 +11,10 @@ def do_pack():
     local("mkdir versions; tar -cvzf versions/web_static_$(date \
             +%Y%m%d%H%M%S).tgz web_static/")
 
+
 env.host = ['100.25.163.174', '100.26.167.149']
 env.user = ubuntu
+
 
 @task
 def do_deploy(archive_path):
@@ -30,6 +32,3 @@ def do_deploy(archive_path):
         return True
     except Exception:
         return False
-
-
-
