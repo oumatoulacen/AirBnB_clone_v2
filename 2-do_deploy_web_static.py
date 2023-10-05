@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-'''a Fabric script that generates a .tgz archive from the contents
-of the web_static folder '''
+'''a Fabric script that generates a .tgz archive'''
 from fabric.api import local, run, put
 from fabric.decorators import task
 
@@ -13,7 +12,6 @@ def do_pack():
 
 
 env.host = ['100.25.163.174', '100.26.167.149']
-env.user = ubuntu
 
 
 @task
