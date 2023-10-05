@@ -1,10 +1,8 @@
 #!/bin/bash
 
 # Install Nginx if not already installed
-if ! command -v nginx &>/dev/null; then
-    apt-get update
-    apt-get -y install nginx
-fi
+apt-get update
+apt-get -y install nginx
 
 # Create necessary directories
 web_static_dir="/data/web_static/releases/test"
@@ -52,7 +50,6 @@ EOL
 
 echo "$config_text" > "$config_file"
 
-# Restart Nginx
-service nginx restart
+sudo service nginx restart
 
 echo "Web server setup completed."
