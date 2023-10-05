@@ -1,7 +1,7 @@
 #!/bin/bash
+# a Bash script that sets up your web servers for the deployment of web_static.
 
-# Install Nginx if not already installed
-apt-get update
+# Install Nginx if not already installed apt-get update
 apt-get -y install nginx
 
 # Create necessary directories
