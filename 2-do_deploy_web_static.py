@@ -4,7 +4,7 @@ import fabric
 from fabric.decorators import task
 from fabric.api import *
 import os
-env.hosts = ["100.27.4.102", "54.165.197.71"]
+env.hosts = ["100.25.163.174", "100.26.167.149"]
 env.user = "ubuntu"
 env.key_filename = "~/.ssh/id_rsa"
 
