@@ -5,7 +5,8 @@ from fabric.decorators import task
 from fabric.api import *
 import os
 env.hosts = ["100.27.4.102", "54.165.197.71"]
-
+env.user = "ubuntu"
+env.key_filename = "~/.ssh/id_rsa"
 
 @task
 def do_deploy(archive_path):
