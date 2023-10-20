@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Fabric script that generates a .tgz archive """
-from fabric.decorators import task
+from fabric import task
 from fabric.api import *
 from datetime import datetime
 import os
@@ -9,16 +9,16 @@ env.hosts = ["100.25.163.174", "100.26.167.149"]
 
 
 @task
-def deploy():
+def deploy(c):
     """ Fabric script that creates and distributes an archive """
     file_name = do_pack()
     if file_name is None:
         return False
-    return do_deploy(file_name)
+    return do_deploy(c, file_name)
 
 
 @task
-def do_deploy(archive_path):
+def do_deploy(c, archive_path):
     """Fabric script that distributes an archive to web servers"""
     try:
         if not os.path.exists(archive_path):
