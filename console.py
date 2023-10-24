@@ -196,7 +196,7 @@ class HBNBCommand(cmd.Cmd):
 
             args_dict[key] = value
 
-        # Create a new instance of the class with the provided arguments
+        # Create a new instance of  the class with the provided arguments
         new_instance = self.classes[class_name]()
         self.do_update(f"{class_name} {new_instance.id} {args_dict}")
         new_instance.save()
