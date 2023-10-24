@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime
 
 from sqlalchemy import Column, Integer, String, DateTime
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
@@ -26,7 +26,7 @@ class BaseModel:
         if kwargs:
             if "updated_at" in kwargs:
                 kwargs["updated_at"] = datetime.strptime(
-                     kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f"
+                    kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f"
                 )
             if "created_at" in kwargs:
                 kwargs["created_at"] = datetime.strptime(
