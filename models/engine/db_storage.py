@@ -22,9 +22,9 @@ class DBStorage:
     def __init__(self):
         """the class constructor for the database storage implementation"""
         self.__engine = create_engine(
-            "mysql+mysqldb://{}:{}@{}/{}".format(user, pwd, host, database),
-            pool_pre_ping=True,
+            "mysql+mysqldb://{}:{}@{}/{}".format(user, pwd, host, database)
         )
+        # pool_pre_ping=True,
         if env == "test":
             metadata = MetaData()
             metadata.drop_all(self.__engine, checkfirst=False)
@@ -51,18 +51,18 @@ class DBStorage:
             cls_objs[obj.to_dict()["__class__"] + "." + obj.id] = obj
         return cls_objs
 
-    def search(self, cls=None, **kwargs):
-        """  """
-        objs = self.all(cls)
-        for key, obj in objs.items():
-            flag = 0
-            for attr, value in kwargs.items():
-                if getattr(obj, attr) != value:
-                    flag = 1
-                    break
-            if flag == 0:
-                return obj
-        return None
+    # def search(self, cls=None, **kwargs):
+    #     """  """
+    #     objs = self.all(cls)
+    #     for key, obj in objs.items():
+    #         flag = 0
+    #         for attr, value in kwargs.items():
+    #             if getattr(obj, attr) != value:
+    #                 flag = 1
+    #                 break
+    #         if flag == 0:
+    #             return obj
+    #     return None
 
     def new(self, obj):
         """a public instance method that adds a
