@@ -3,13 +3,13 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy import MetaData
-import os
+from os import environ
 
-user = os.environ.get("HBNB_MYSQL_USER")
-pwd = os.environ.get("HBNB_MYSQL_PWD")
-host = os.environ.get("HBNB_MYSQL_HOST")
-database = os.environ.get("HBNB_MYSQL_DB")
-env = os.environ.get("HBNB_ENV")
+user = environ.get("HBNB_MYSQL_USER")
+pwd = environ.get("HBNB_MYSQL_PWD")
+host = environ.get("HBNB_MYSQL_HOST")
+database = environ.get("HBNB_MYSQL_DB")
+env = environ.get("HBNB_ENV")
 
 
 class DBStorage:
@@ -80,28 +80,29 @@ class DBStorage:
         if obj:
             self.__session.delete(obj)
 
-    def call(self, string):
-        """a public instance method used for executing
-        sql commands on the class's engine"""
-        self.__engine.execute(string)
+    # def call(self, string):
+    #     """a public instance method used for executing
+    #     sql commands on the class's engine"""
+    #     self.__engine.execute(string)
 
-    def start_session(self):
-        """a public instance method used for starting a new session"""
-        self.__session = DBStorage.Session()
+    # def start_session(self):
+    #     """a public instance method used for starting a new session"""
+    #     self.__session = DBStorage.Session()
 
-    def stop_session(self):
-        """a public instance method used for ending a session"""
-        self.save()
-        self.__session.close()
+    # def stop_session(self):
+    #     """a public instance method used for ending a session"""
+    #     self.save()
+    #     self.__session.close()
 
     def reload(self):
         """a public instance method that initializes
         a thread-safe version of a session"""
         from models.user import User
+        from models.base_model import Base
         from models.amenity import Amenity
         from models.place import Place
-        from models.state import State, Base
-        from models.city import City, Base
+        from models.state import State
+        from models.city import City
         from models.review import Review
 
         Base.metadata.create_all(self.__engine)
