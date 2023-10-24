@@ -15,7 +15,7 @@ class FileStorage:
             className = cls.__name__
             for k, v in FileStorage.__objects.items():
                 if k.split('.')[0] == className:
-                    new_objects[k] = str(v)
+                    new_objects[k] = v
             return new_objects
         else:
             return FileStorage.__objects
