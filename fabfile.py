@@ -6,4 +6,3 @@ def remote_task():
         # Run remote commands
         result = run('ls -l')
         print(result.stdout)
-
