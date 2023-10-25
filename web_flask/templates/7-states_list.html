@@ -5,7 +5,6 @@
     </HEAD>
     <BODY>
         <H1>States</H1>
-        {% comment %} {{ state.id }}: <B>{{ state.name }} {% endcomment %}
         <UL>
             {% for state in states.values() %}
                 <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
