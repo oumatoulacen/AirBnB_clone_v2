@@ -1,24 +1,22 @@
 #!/usr/bin/python3
 """ script that starts a Flask web application """
-
-from flask import Flask, render_template
 from models import storage
+from flask import Flask, render_template
 from models.state import State
-
 app = Flask(__name__)
-app.url_map.strict_slashes = False
 
 
-@app.route("/cities_by_states")
-def cities_states():
-    """ all cities in the state"""
-    states = storage.all(State)
-    states = dict(sorted(states.items(), key=lambda item: item[1].name))
-    return render_template("8-cities_by_states.py", states=states)
+@app.route("/cities_by_states", strict_slashes=False)
+def cities_by_states():
+    """ list all states"""
+    states = list(storage.all(State).values())
+    states.sort(key=lambda state: state.name)
+    return render_template("8-cities_by_states.html", states=states)
 
 
 @app.teardown_appcontext
-def teardown(error):
+def teardown(exception):
+    ''''closes the connection'''
     storage.close()
 
 
