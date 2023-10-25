@@ -6,9 +6,9 @@ from models.state import State
 app = Flask(__name__)
 
 
-@app.route("/states_list", strict_slashes = False)
+@app.route("/states_list", strict_slashes=False)
 def states_list():
-    """ list all states"""    
+    """ list all states"""
     states = list(storage.all(State).values())
     states.sort(key=lambda state: state.name)
     return render_template("7-states_list.html", states=states)
